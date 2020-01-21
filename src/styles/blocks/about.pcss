@@ -1,0 +1,41 @@
+
+.about__container {display: flex;
+flex-direction: row;
+justify-content: space-between;
+ margin-top: 100px;
+
+}
+.about__left {width: 35%; margin-bottom: 250px;
+}
+
+.about__right {width: 60%;
+font-size: 16px;
+font-weight: 600;
+opacity: 0.6; }
+
+.about__welcome-text {
+margin-bottom: 20px;
+}
+.about__username {
+  font-size: 36px;
+font-weight: 800;
+line-height: 1.1;
+margin-bottom: 30px;
+}
+.about__description {
+  margin-bottom: 90px;
+}
+.about__ps {position: relative;
+  &::before {
+  content: "*";
+  position: absolute;
+  color: #402224; 
+  font-size: 48px;
+top: -10px;
+left: -40px;
+
+ 
+}}
+.about__ps-text {font-style: italic; 
+opacity: 0.6;
+}

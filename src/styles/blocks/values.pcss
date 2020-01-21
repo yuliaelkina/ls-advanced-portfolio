@@ -1,0 +1,30 @@
+.values {position: relative;
+  background-image: url(/src/images/content/bg_skills_1800.png);
+  background-size: cover; 
+  color: #fff;
+  &::after {content: "";
+    z-index: 5;
+    height: 100%;
+    width: 38%;
+    display: block;
+    position: absolute;
+    left: 0;top: 60px;
+    background-image: url(/src/images/content/arms.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+  }}
+.values__container {display: flex;
+  flex-direction: column; align-items: flex-end;
+}
+.values__title {width: 55%;
+  padding-top: 100px; }
+.values__title-text {
+  font-style: 30px; font-weight: 700; margin-bottom: 60px;
+}
+.values__title-desc {margin-left: 30px;
+  font-style: 16px; font-weight: 600; opacity: 0.5;
+}
+.values__content {margin-top: 90px;
+  width: 48%; 
+}
