@@ -1,7 +1,9 @@
 include ./mixins.pug
+include ./components/socials.pug
+
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -9,205 +11,25 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .welcome-section
-        section.hero
-          .container.hero__container
-            header.hero__header
-              .hero__logo
-                .logo: a.logo__link(href="#") ЮЕ
-              .hero__menu
-                +navigation 
-              .hero__socials
-                +socials
-            .hero__content
-              .user-info
-                h1.user-info__description.text Личный сайт<br> веб-разработчика
-                .user-info__name Юлии <br> &nbsp;Елкиной
-            .hero__buttons
-              a.scroll-btn 
-                span.scroll-btn__name Скролл
-                +icon("scroll", "scroll-btn__icon")
+      include ./components/header.pug
+      main.content
+        .welcome-section
+          include ./components/hero.pug
 
-        section.about
-          .container
-            .about__container
-              .about__left
-                .user
-                  .user__avatar
-                    .avatar
-                      +image("content/user.jpg", "моя фотография", "avatar__image")
-                  .user__text
-                    - 
-                      var rows = [
-                      ["Проживаю:", "Санкт-Петербург"], 
-                      ["Возраст:", "30 лет"], 
-                      ["Родилась:", "23 сентября 1989 года"]
-                      ]
-                    table.user__data
-                      table.user__data-table
-                        each row in rows
-                          tr.user__data-row
-                            each cell in row
-                              td.user__data-cell #{cell}
+          include ./components/about.pug
 
-              .about__right.text
-                .about__welcome-text Привет, меня зовут
-                h2.about__username Юлия Елкина
-                .about__description Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .about__ps
-                  .about__ps-text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        include ./components/values.pug
+                          
 
-
-      section.values
-        .container.values__container
-          .values__title
-            .values__title-text Чем я могу быть полезен вам
-            .values__title-desc.text За время обучения в LoftSchool я освоила много полезных навыков разработчика и планирую развиваться дальше
-          .values__content
-            -
-              var items = [
-                ["Frontend", ["HTML5", "CSS3", "JavaScript", "Jquery и Vue.js"]],
-                ["Workflow", ["GIT", "Terminal", "Gulp", "WebPack"]],
-                ];
-            ul.skills-graphic
-              each row in items
-                li.skills-graphic__item
-                  .skills-row
-                    .skills-row__title #{row[0]}
-                    .skills-row__content
-                      ul.skills
-                        each skill in row[1]
-                          li.skills__item
-                            .skill
-                              svg(viewBox="0 0 100 100").skill__circle-shape
-                                circle(cx="50" cy="50" r="45").skill__circle.skill__circle--bottom
-                                circle(cx="50" cy="50" r="45" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--top
-                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                                  stop(offset="0%" stop-color="#d47e1e")
-                                  stop(offset="100%" stop-color="#e4992a")
-                              .skill__title #{skill}
-                         
-
-      section.portfolio
-        .container
-          .portfolio__title Мои работы
-          .portfolio__content
-            .slider
-              .slider__display
-                +image("content/work_1.png", "work preview", "slider__display-pic")
-                .slider__display-previews
-                  ul.slider-previews
-                    li.slider-previews__item
-                      a.slider-previews__link(href="#")
-                        +image("content/work_1.png", "сайт школы рисования", "slider-previews__pic")
-                    li.slider-previews__item
-                      a.slider-previews__link(href="#")
-                        +image("content/work_2.jpg", "первая учебная работа", "slider-previews__pic")
-                    li.slider-previews__item
-                      a.slider-previews__link(href="#")
-                        +image("content/work_3.jpg", "сайт клуба", "slider-previews__pic")
-                    li.slider-previews__item
-                      a.slider-previews__link(href="#")
-                        +image("content/work_4.jpg", "сайт про бургеры", "slider-previews__pic")
-                .slider__buttons
-                  .direction-buttons
-                    button.direction-btn.direction-btn--left
-                      +icon("keyboard-right-arrow-button", "direction-btn__icon")
-                    button.direction-btn.direction-btn--right
-                      +icon("keyboard-right-arrow-button", "direction-btn__icon direction-btn__icon--left")
-
-              .slider__info
-                .slider__tags
-                  - var tags = ["html", "css", "javaScript"];
-                    ul.taglist
-                      each tag in tags
-                        li.taglist__item #{tag}
-                .slider__info-text
-                  h3.slider__info-title Сайт-портфолио 
-                  .slider__info-desc Юлия проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .slider__info-buttons
-                  a.iconed-link Посмотреть сайт
+        include ./components/portfolio.pug
      
-      .contact-section
-        section.reviews
-          .container
-            .reviews__title Что обо мне говорят
-            .reviews__buttons
-              .round-btns
-                button.round-btn
-                  +icon("keyboard-right-arrow-button", "direction-btn__icon direction-btn__icon--left")
-                button.round-btn
-                  +icon("keyboard-right-arrow-button", "direction-btn__icon")
-            .reviews__content
-              ul.posts-slider
-                li.posts-slider__item
-                  .posts-slider__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .post-slider__user
-                    .author
-                      .author__avatar
-                        .avatar
-                          +image("content/rw_avatar_1.png", "фотография автора отзыва","avatar__image")
-                      .author__text
-                        .author__name Ковальчук Дмитрий
-                        .author__job Основатель Loftschool
-                li.posts-slider__item
-                  .posts-slider__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .post-slider__user
-                    .author
-                      .author__avatar
-                        .avatar
-                          +image("content/rw_avatar_2.png", "фотография автора","avatar__image")
-                      .author__text
-                        .author__name Сабанцев Владимир
-                        .author__job Преподаватель
+        .contact-section
+          include ./components/reviews.pug
 
 
-        section.contacts
-          .container
-            .contacts__title Связаться со мной
-            .contacts__content
-              form.form(action="#")
-                .form__row
-                  .form__part
-                    .form__title Связаться со мной
-                    input.form__input(type=text, name=name, placeholder="Ковальчук Дмитрий")
-                    div.form__logo
-                      +icon("user", "form__logo-icon")
-                  .form__part
-                    .form__title Введите ваш email
-                    input.form__input(type=text, name=email, placeholder="loftschool@study.com")
-                    div.form__logo
-                      +icon("envelope", "form__logo-icon")
-                .form__row
-                  .form__part.form__part--full
-                    .form__title Сообщение к письму
-                    input.form__input(type=text, name=text, placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса")
-                    div.form__logo
-                      +icon("message", "form__logo-icon")
-                button.send-btn(type="submit") Отправить
-
-      
-      footer.footer
-        .container
-          .footer__content
-            .footer__left
-              .footer__copyright
-                .copyright 	&copy; 2020
-              .footer__author
-                .footer__author-name Юлия Елкина
-                .footer__author-desc Личный сайт веб-разработчика
-            .footer-right
-              .footer__menu
-                +navigation
-              .footer__bottom  
-                .footer__text
-                  .footer__desc Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
-                  +socials
-                .footer__quote
-                  .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                  .footer__quote-author Martin Golding
-                
-          
+          include ./components/contacts.pug
+      include ./components/footer.pug
+            
 
         
         
