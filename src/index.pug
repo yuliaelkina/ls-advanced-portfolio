@@ -35,7 +35,7 @@ html(lang="en")
                 .user
                   .user__avatar
                     .avatar
-                      +image("content/user.jpg", "my photo", "avatar__image")
+                      +image("content/user.jpg", "моя фотография", "avatar__image")
                   .user__text
                     - 
                       var rows = [
@@ -99,21 +99,21 @@ html(lang="en")
                   ul.slider-previews
                     li.slider-previews__item
                       a.slider-previews__link(href="#")
-                        +image("content/work_1.png", "my work preview 1", "slider-previews__pic")
+                        +image("content/work_1.png", "сайт школы рисования", "slider-previews__pic")
                     li.slider-previews__item
                       a.slider-previews__link(href="#")
-                        +image("content/work_1.png", "my work preview 2", "slider-previews__pic")
+                        +image("content/work_1.png", "сайт-портфолио", "slider-previews__pic")
                     li.slider-previews__item
                       a.slider-previews__link(href="#")
-                        +image("content/work_1.png", "my work preview 3", "slider-previews__pic")
+                        +image("content/work_1.png", "сайт клуба", "slider-previews__pic")
                     li.slider-previews__item
                       a.slider-previews__link(href="#")
-                        +image("content/work_1.png", "my work preview 4", "slider-previews__pic")
+                        +image("content/work_1.png", "сайт про бургеры", "slider-previews__pic")
                 .slider__buttons
                   .direction-buttons
-                    .direction-btn.direction-btn--left
+                    button.direction-btn.direction-btn--left
                       +icon("keyboard-right-arrow-button", "direction-btn__icon")
-                    .direction-btn.direction-btn--right
+                    button.direction-btn.direction-btn--right
                       +icon("keyboard-right-arrow-button", "direction-btn__icon direction-btn__icon--left")
 
               .slider__info
@@ -134,9 +134,9 @@ html(lang="en")
             .reviews__title Что обо мне говорят
             .reviews__buttons
               .round-btns
-                .round-btn
+                button.round-btn
                   +icon("keyboard-right-arrow-button", "direction-btn__icon direction-btn__icon--left")
-                .round-btn
+                button.round-btn
                   +icon("keyboard-right-arrow-button", "direction-btn__icon")
             .reviews__content
               ul.posts-slider
@@ -184,7 +184,7 @@ html(lang="en")
                     input.form__input(type=text, name=text, placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса")
                     div.form__logo
                       +icon("message", "form__logo-icon")
-              .send-btn Отправить
+              button.send-btn Отправить
 
       
       footer.footer
