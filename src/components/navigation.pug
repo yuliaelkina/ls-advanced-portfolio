@@ -1,6 +1,14 @@
 nav.menu  
-  - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-    ul.menu__list
-      each item in menu
-        li.menu__item 
-          a.menu__link #{item} 
+  - 
+    var sections = [
+      ["Главная", "#0"], 
+      ["Обо мне", "#1"],
+      ["Навыки", "#2"],
+      ["Работы", "#3"],
+      ["Отзывы", "#4"],
+      ["Связаться", "#5"],
+      ];
+  ul.menu__list
+    each section in sections
+      li.menu__item 
+        a.menu__link(href=section[1]) #{section[0]} 
