@@ -21,7 +21,7 @@ html(lang="en")
                 +socials
             .hero__content
               .user-info
-                h1.user-info__description Личный сайт<br> веб-разработчика
+                h1.user-info__description.text Личный сайт<br> веб-разработчика
                 .user-info__name Юлии <br> &nbsp;Елкиной
             .hero__buttons
               a.scroll-btn 
@@ -50,7 +50,7 @@ html(lang="en")
                             each cell in row
                               td.user__data-cell #{cell}
 
-              .about__right
+              .about__right.text
                 .about__welcome-text Привет, меня зовут
                 h2.about__username Юлия Елкина
                 .about__description Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -62,7 +62,7 @@ html(lang="en")
         .container.values__container
           .values__title
             .values__title-text Чем я могу быть полезен вам
-            .values__title-desc За время обучения в LoftSchool я освоила много полезных навыков разработчика и планирую развиваться дальше
+            .values__title-desc.text За время обучения в LoftSchool я освоила много полезных навыков разработчика и планирую развиваться дальше
           .values__content
             -
               var items = [
@@ -146,7 +146,7 @@ html(lang="en")
                     .author
                       .author__avatar
                         .avatar
-                          +image("content/rw_avatar_1.png", "user_pic","avatar__image")
+                          +image("content/rw_avatar_1.png", "фотография автора отзыва","avatar__image")
                       .author__text
                         .author__name Ковальчук Дмитрий
                         .author__job Основатель Loftschool
@@ -156,7 +156,7 @@ html(lang="en")
                     .author
                       .author__avatar
                         .avatar
-                          +image("content/rw_avatar_2.png", "user_pic","avatar__image")
+                          +image("content/rw_avatar_2.png", "фотография автора","avatar__image")
                       .author__text
                         .author__name Сабанцев Владимир
                         .author__job Преподаватель
@@ -184,7 +184,7 @@ html(lang="en")
                     input.form__input(type=text, name=text, placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса")
                     div.form__logo
                       +icon("message", "form__logo-icon")
-              button.send-btn Отправить
+                button.send-btn(type="submit") Отправить
 
       
       footer.footer
