@@ -2,21 +2,21 @@ form.form(action="#")
   .form__row
     .form__part
      
-      input.form__input(type=text, name=name)
-      .form__title Введите Ваше имя
+      input.form__input(type=text, name=name, placeholder=" ")
+      label(for="name").form__title Введите Ваше имя
       div.form__logo
         +icon("user", "form__logo-icon")
     .form__part
       
-      input.form__input(type=text, name=email)
-      .form__title Введите ваш email
+      input.form__input(type=text, name=email, placeholder=" ")
+      label(for="email").form__title Введите ваш email
       div.form__logo
         +icon("envelope", "form__logo-icon")
   .form__row
     .form__part.form__part--full
       
-      input.form__input(type=text, name=text)
-      .form__title Сообщение к письму
+      input.form__input(type=text, name=text, placeholder=" ")
+      label(for="text").form__title Сообщение к письму
       div.form__logo
         +icon("message", "form__logo-icon")
   button.form__send-btn(type="submit") Отправить
