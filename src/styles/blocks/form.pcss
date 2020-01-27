@@ -4,13 +4,15 @@
 .form__row {
   display: flex; 
   justify-content: space-between;
-  margin-bottom: 40px; 
+  margin-bottom: 60px; 
   width: 100%;
 }
 .form__title {
-  font-weight: 700;
-  margin-bottom: 20px;
+  position: absolute;
+  top: 0; left: 50px;
   opacity: 0.3;
+  font-weight: 700;
+  transition: top $transition-duration;
 }
 .form__part {
   width: 45%; 
@@ -19,14 +21,14 @@
 .form__part--full {
   width: 100%;
 }
-.form__logo {
+.form__logo {transition: fill $transition-duration;
   fill: #fff;
   width: 30px;
   height: 30px; 
   position: absolute; 
   bottom: 20px;
 }
-.form__input {
+.form__input {z-index: 2;
   opacity: 1; 
   position: relative;
   background: none; 
@@ -40,21 +42,23 @@
   padding-bottom: 20px;
   padding-left: 45px;
   font-weight: 800;
-&::placeholder {
-  color: #fff; 
-  opacity: 1;}
+  transition: border-color $transition-duration;
+  &:focus {border-color: $main-color;
 }
+
+}
+.form__input:focus + .form__logo {fill: $main-color;}
+.form__input:focus + .form__title {top: -45px;}
 .form__send-btn {
   padding: 35px 120px; 
   max-width: 350px;
-  background: linear-gradient(to right, #d47e1e, #dc9322);
+  background: linear-gradient(to right, $main-color, #dc9322);
   text-transform: uppercase;
   font-size: 1.125rem;
   color: #fff;
   font-weight: 700;
 &:hover {
   cursor: pointer;
-  background: #d5801e;
-  text-decoration: underline;
+  background: $main-color;
 }
 }

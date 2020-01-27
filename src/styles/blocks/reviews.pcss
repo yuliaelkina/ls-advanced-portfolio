@@ -19,15 +19,20 @@
   border-radius: 50%;
   border: 1px solid #fff;
   padding: 20px;
+  transition: border $transition-duration;
 &:hover {
   cursor: pointer;
   border: 1px solid #d47e1e;}
 }
+
 .reviews__btn-icon {
+  transition: fill $transition-duration;
   height: 10px;
   width: 7px;
   fill: #fff;
+ 
 }
+.reviews__btn:hover .reviews__btn-icon {fill: $main-color;}
 
 .reviews__btn-icon--left {
   transform: rotate(180deg);
