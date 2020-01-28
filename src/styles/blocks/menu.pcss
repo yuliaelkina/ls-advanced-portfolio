@@ -1,9 +1,13 @@
-.menu__list {display: flex;}
-.menu__item {margin-right: 60px; font-size: 16px;
+.menu__list {
+  display: flex;
+}
+.menu__item {transition: color $transition-duration;
+  margin-right: 60px; 
+  font-size: 1rem;
   font-weight: normal;
-&:hover {text-decoration: underline;}
+&:hover {
+  color: $main-color;}
 &:last-child {
   margin-right: 0;
 }
-
 }

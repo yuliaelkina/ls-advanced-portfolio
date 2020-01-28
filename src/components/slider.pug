@@ -1,0 +1,30 @@
+.slider
+  .slider__display
+    +image("content/work_1.png", "work preview", "slider__display-pic")
+    ul.slider__previews
+      li.slider__previews-item
+        a.slider-previews__link(href="#")
+          +image("content/work_1.png", "сайт школы рисования", "slider__previews-pic")
+      li.slider__previews-item
+        a.slider-previews__link(href="#")
+          +image("content/work_2.jpg", "первая учебная работа", "slider__previews-pic")
+      li.slider__previews-item
+        a.slider-previews__link(href="#")
+          +image("content/work_3.jpg", "сайт клуба", "slider__previews-pic")
+      li.slider__previews-item
+        a.slider-previews__link(href="#")
+          +image("content/work_4.jpg", "сайт про бургеры", "slider__previews-pic")
+    .slider__buttons
+      button.slider__btn(type="button")
+        +icon("keyboard-right-arrow-button", "slider__btn-icon")
+      button.slider__btn(type="button")
+        +icon("keyboard-right-arrow-button", "slider__btn-icon slider__btn-icon--left")
+  .slider__info
+    .slider__tags
+      include ./taglist.pug
+    .slider__info-text
+      h4.slider__info-title Сайт-портфолио 
+      .slider__info-desc 
+        p Юлия проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+    .slider__info-buttons
+      a.slider__info-link Посмотреть сайт

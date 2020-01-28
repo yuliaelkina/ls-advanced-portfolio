@@ -1,0 +1,14 @@
+nav.menu  
+  - 
+    var sections = [
+      ["Главная", "#main"], 
+      ["Обо мне", "#about"],
+      ["Навыки", "#values"],
+      ["Работы", "#portfolio"],
+      ["Отзывы", "#about"],
+      ["Связаться", "#contact"],
+      ];
+  ul.menu__list
+    each section in sections
+      li.menu__item 
+        a.menu__link(href=section[1]) #{section[0]} 

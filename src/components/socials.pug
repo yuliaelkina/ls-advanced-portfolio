@@ -1,0 +1,13 @@
+mixin socials(mod)
+  .socials__nets
+    - 
+      var items = [
+        ["insta", "https://instagram.com/yulia_elka"], 
+        ["vk", "https://vk.com/id213151"],
+        ["github", "https://github.com/yuliaelkina"],
+        ];
+    ul.socials
+      each row in items
+        li(class='socials__item socials__item--' + mod) 
+          a.socials__link(href=row[1])
+            +icon(row[0], "socials__icon")

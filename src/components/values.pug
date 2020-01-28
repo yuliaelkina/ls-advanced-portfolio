@@ -1,0 +1,23 @@
+section.values#values
+  .container.values__container
+    .values__title
+      h3.values__title-text Чем я могу быть полезен вам
+      .values__title-desc.text 
+        p За время обучения в LoftSchool я освоила много полезных навыков разработчика и планирую развиваться дальше
+    .values__content
+      -
+        var items = [
+          ["Frontend", ["HTML5", "CSS3", "JavaScript", "Jquery и Vue.js"]],
+          ["Workflow", ["GIT", "Terminal", "Gulp", "WebPack"]],
+          ];
+      ul.values__graphic
+        each row in items
+          li.values__item
+            .values__row
+              h4.values__row-title #{row[0]}
+              .values__row-content
+                ul.skills
+                  each skill in row[1]
+                    li.skills__item
+                      include ./skill.pug
+                        .skill__title #{skill}
