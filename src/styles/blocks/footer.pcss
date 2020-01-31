@@ -11,6 +11,10 @@
     padding-top: 60px;
     padding-bottom: 70px;
   }
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__left {
@@ -30,6 +34,10 @@
   @include tablets {
     margin-right: 0;
     margin-bottom: 40px;
+  }
+
+  @include phones {
+    margin-bottom: 20px;
   }
 }
 
@@ -51,10 +59,18 @@
 
 .footer__author-desc {
   opacity: 0.15;
+
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .footer__menu {
   margin-bottom: 60px;
+
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .footer__menu .menu__list {

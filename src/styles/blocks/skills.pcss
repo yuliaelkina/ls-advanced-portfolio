@@ -1,7 +1,15 @@
 .skills {
   display: flex;
   justify-content: space-around;
+
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 .skills__item {
   margin-right: 20px;
+
+  @include phones {
+    margin-right: 10px;
+  }
 }

@@ -3,6 +3,10 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 100px;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .about__profile {
@@ -12,6 +16,11 @@
   @include tablets {
     width: 45%;
   }
+
+  @include phones {
+    width: 95%;
+    margin-bottom: 50px;
+  }
 }
 
 .about__desc {
@@ -19,6 +28,10 @@
 
   @include tablets {
     width: 51%;
+  }
+
+  @include phones {
+    width: 95%;
   }
 }
 
@@ -40,7 +53,11 @@
 .about__description {
   margin-bottom: 90px;
 
-  @include tablets {margin-bottom: 50px;}
+  @include tablets {
+    margin-bottom: 50px;
+  }
+
+  
 }
 
 .about__ps {
@@ -56,10 +73,18 @@
   @include tablets {
     left: -30px;
   }
+
+  @include phones {
+    left: -25px;
+  }
 }
 }
 
 .about__ps-text {
   font-style: italic;
   opacity: 0.6;
+  
+  @include phones {
+    margin-bottom: 100px;
+  }
 }

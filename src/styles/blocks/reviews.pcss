@@ -3,10 +3,21 @@
   flex-direction: row;
   padding-top: 140px;
   margin-bottom: 100px;
+
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 70px;
+    align-items: center;
+  }
 }
 
 .reviews__title {
   margin-right: 50px;
+
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .reviews__buttons {
@@ -55,5 +66,8 @@
   }
   @include tablets {
     width: 95%;
+  }
+  @include phones {
+    width: 100%;
   }
 }

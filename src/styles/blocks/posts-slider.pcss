@@ -1,10 +1,13 @@
 .posts-slider {
   display: flex;
+  overflow: hidden;
 }
+
 .posts-slider__item {
   position: relative;
   margin-left: 100px;
-  flex: 0.5;
+  width: 50%;
+
 &::before {
   content: "";
   position: absolute;
@@ -20,12 +23,16 @@
   @include tablets {
     height: 25px;
     width: 30px;
-    left: -35px;
+    left: -30px;
   }
 }
 
   @include tablets {
     margin-left: 50px;
+  }
+  @include phones {
+    margin-left: 30px;
+    width: 100%;
   }
 }
 
@@ -51,6 +58,10 @@
     width: 75px;
     height: 75px;
     margin-right: 20px;
+  }
+  @include phones {
+    width: 60px;
+    height: 60px;
   }
 }
 
