@@ -1,10 +1,11 @@
 section.reviews#4
   .container
-    h3.reviews__title.title Что обо мне говорят
-    .reviews__buttons
-      button.reviews__btn(type="button")
-        +icon("keyboard-right-arrow-button", "reviews__btn-icon reviews__btn-icon--left")
-      button.reviews__btn(type="button")
-        +icon("keyboard-right-arrow-button", "reviews__btn-icon")
+    .reviews__row
+      h3.reviews__title.title Что обо мне говорят
+      .reviews__buttons
+        button.reviews__btn(type="button")
+          +icon("keyboard-right-arrow-button", "reviews__btn-icon reviews__btn-icon--left")
+        button.reviews__btn(type="button")
+          +icon("keyboard-right-arrow-button", "reviews__btn-icon")
     .reviews__content
       include ./posts-slider.pug

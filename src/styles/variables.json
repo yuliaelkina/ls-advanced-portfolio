@@ -5,6 +5,7 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
+  "tablets-small": "560px",
   "bp-phones": "480px",
   "transition-duration": "0.4s"
 }

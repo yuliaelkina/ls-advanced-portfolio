@@ -1,48 +1,89 @@
 .values {
   position: relative;
-  background-image: url(~images/content/bg_skills_1800.png);
-  background-size: cover; 
+  background-image: url(~images/content/bg_skills_1800.jpg);
+  background-size: cover;
   color: #fff;
-&::after {content: "";
+  overflow: hidden;
+
+  @include desktop {
+  background-image: url(~images/content/bg_skills_1200.jpg);
+  }
+
+&::before {
+  content: "";
   z-index: 5;
   height: 105%;
   width: 40%;
   display: block;
   position: absolute;
-  left: 0;top: 60px;
+  left: 0;
+  bottom: -160px;
   background-image: url(~images/content/arms.png);
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
+
+  @include desktop {
+    height: 80%;
+  }
+
+  @include tablets {
+    height: 40%;
+    width: 65%;
+    transform: rotate(-90deg);
+    bottom: 0;
+    left: 100px;
   }
 }
+
+}
+
 .values__container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-end;
 }
+
 .values__title {
   width: 55%;
-  padding-top: 100px; 
+  padding-top: 100px;
+
+  @include tablets {
+    text-align: center;
+    width: 90%;
+  }
 }
+
 .values__title-text {
-  font-size: 1.875rem; 
-  font-weight: 700; 
+  font-size: 1.875rem;
+  font-weight: 700;
   margin-bottom: 60px;
 }
+
 .values__title-desc {
   margin-left: 30px;
   
+  @include tablets {
+    margin-left: 0;
+  }
 }
+
 .values__content {
   margin-top: 90px;
   width: 48%;
   margin-bottom: 140px;
+
+  @include tablets {
+    width: 90%;
+    margin-bottom: 300px;
+  }
 }
+
 .values__row-title {
   margin-bottom: 40px;
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 .values__row-content {
   margin-bottom: 50px;
 }
