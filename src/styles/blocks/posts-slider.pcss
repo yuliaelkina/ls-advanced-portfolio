@@ -7,6 +7,10 @@
   position: relative;
   margin-left: 100px;
   width: 50%;
+  
+  @include phones {
+    width: 100%;
+  }
 
 &::before {
   content: "";
@@ -28,11 +32,7 @@
 }
 
   @include tablets {
-    margin-left: 50px;
-  }
-  @include phones {
     margin-left: 30px;
-    width: 100%;
   }
 }
 

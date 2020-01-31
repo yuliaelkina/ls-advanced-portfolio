@@ -1,5 +1,9 @@
 .form {
   margin-bottom: 60px;
+
+  @include phones {
+    margin-bottom: 0;
+  }
 }
 
 .form__row {
@@ -7,6 +11,11 @@
   justify-content: space-between;
   margin-bottom: 60px;
   width: 100%;
+  
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 }
 
 .form__title {
@@ -21,6 +30,11 @@
 .form__part {
   width: 45%;
   position: relative;
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 60px;
+  }
 }
 
 .form__part--full {
@@ -75,6 +89,11 @@
   font-size: 1.125rem;
   color: #fff;
   font-weight: 700;
+
+  @include phones {
+    width: 100%;
+    padding: 35px 50px;
+  }
 &:hover {
   cursor: pointer;
   background: $main-color;
