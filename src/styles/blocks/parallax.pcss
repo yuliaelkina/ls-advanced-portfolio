@@ -1,0 +1,34 @@
+.parallax { z-index: -5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  perspective: 250px;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.parallax__stopcolor {position: absolute;
+  bottom: 0;
+  z-index: -10;
+  width: 100%;
+  height: 1000px;
+  background-color: #1b1f22;
+}
+
+$layers: 5;
+@for $LayerNum from $layers through 1 {
+  .parallax__layer:nth-child(#{$LayerNum}) {
+    $currentLayer: $layers - $LayerNum;
+    $perspective: $currentLayer * -50px;
+    $scale: $currentLayer * 0.5 +1;
+
+    transform: translateZ($perspective);
+    transform: scale($scale); 
+  }
+}

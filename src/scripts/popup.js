@@ -1,6 +1,6 @@
 let menu = document.querySelector('.pop-up__menu');
 let body = document.querySelector('body');
-let items = document.pop-up.querySelectorAll('.menu__item');
+let items = document.querySelectorAll('.pop-up__nav .menu__item');
 let burger = document.querySelector('.pop-up__button');
 let close = document.querySelector('.pop-up__close');
 
