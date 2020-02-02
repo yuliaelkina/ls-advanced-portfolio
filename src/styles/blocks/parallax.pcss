@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  perspective: 250px;
+  perspective: 100px;
 }
 .parallax__layer {
   position: absolute;
@@ -25,9 +25,8 @@ $layers: 5;
 @for $LayerNum from $layers through 1 {
   .parallax__layer:nth-child(#{$LayerNum}) {
     $currentLayer: $layers - $LayerNum;
-    $perspective: $currentLayer * -50px;
-    $scale: $currentLayer * 0.5 +1;
-
+    $perspective: -$currentLayer * 50px;
+    $scale: $currentLayer * 0.5 + 1;
     transform: translateZ($perspective);
     transform: scale($scale); 
   }
