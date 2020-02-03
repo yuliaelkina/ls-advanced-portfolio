@@ -1,0 +1,34 @@
+  [
+  {
+    "id": 1,
+    "title": "Сайт школы онлайн образования",
+    "skills": "Html, Css, JavaScript, Vue",
+    "photo": "work_1.jpg",
+    "link": "#",
+    "desc": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+  },
+  {
+    "id": 2,
+    "title": "Первая учебная работа",
+    "skills": "Html, Css",
+    "photo": "work_2.jpg",
+    "link": "#",
+    "desc": "Сделана в рамках обучения на курсе по основам верстки в Loftschool"
+  },
+  {
+    "id": 3,
+    "title": "Сайт конно-спортивного клуба",
+    "skills": "Html, Css, JavaScript",
+    "photo": "work_3.jpg",
+    "link": "https://www.onsloboda.ru/",
+    "desc": "Сайт, сделанный для конно-спортивной школы города Петрозаводска после прохождения 2х курсов от Loftschool"
+  },
+  {
+    "id": 4,
+    "title": "Сайт burger",
+    "skills": "Html, Css, JavaScript",
+    "photo": "work_4.jpg",
+    "link": "#",
+    "desc": "Сделана в рамках обучения на курсе по основам веб-разработки в Loftschool"
+  }
+]

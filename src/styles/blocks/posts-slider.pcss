@@ -1,15 +1,27 @@
 .posts-slider {
   display: flex;
   overflow: hidden;
+  flex-basis: 50%;
+
+  @include phones {
+    flex-basis: 100%;
+  }
 }
 
 .posts-slider__item {
+  min-width: calc(50%-100px);
   position: relative;
   margin-left: 100px;
-  width: 50%;
+  
+  @include tablets {
+    margin-left: 30px;
+    min-width: calc(50%-30px);
+  }
   
   @include phones {
     width: 100%;
+    min-width: calc(100%-40px);
+    margin-right: 10px;
   }
 
 &::before {
@@ -30,10 +42,6 @@
     left: -30px;
   }
 }
-
-  @include tablets {
-    margin-left: 30px;
-  }
 }
 
 .posts-slider__subject {
