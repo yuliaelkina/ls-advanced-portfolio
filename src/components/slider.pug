@@ -23,9 +23,9 @@ script(type="text/x-template")#slider-display
 
 script(type="text/x-template")#slider-btns
     .slider__buttons
-      button.slider__btn(type="button" @click.prevent="$emit('slide', 'next')")
-        +icon("keyboard-right-arrow-button", "slider__btn-icon")
       button.slider__btn(type="button" @click.prevent="$emit('slide', 'prev')")
+        +icon("keyboard-right-arrow-button", "slider__btn-icon")
+      button.slider__btn(type="button" @click.prevent="$emit('slide', 'next')")
         +icon("keyboard-right-arrow-button", "slider__btn-icon slider__btn-icon--left")
    
 script(type="text/x-template")#slider-thumbs
