@@ -1,4 +1,5 @@
-.parallax { z-index: -5;
+.parallax {
+  z-index: -5;
   position: absolute;
   top: 0;
   left: 0;
@@ -9,6 +10,7 @@
   overflow-y: auto;
   perspective: 100px;
 }
+
 .parallax__layer {
   position: absolute;
   top: 0;
@@ -23,7 +25,8 @@
   left: 0;
 }
 
-.parallax__stopcolor {position: absolute;
+.parallax__stopcolor {
+  position: absolute;
   top: 100%;
   z-index: -10;
   width: 100%;
@@ -32,6 +35,7 @@
 }
 
 $layers: 5;
+
 @for $LayerNum from $layers through 1 {
   .parallax__layer:nth-child(#{$LayerNum}) {
     $currentLayer: calc($layers - $LayerNum);
