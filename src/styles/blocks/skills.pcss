@@ -1,7 +1,28 @@
-.skills {
-  display: flex; 
-  justify-content: flex-start;
+.skills-row-title {
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @include phones {
+    text-align: center;
+  }
 }
+
+
+.skills__list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+
+  @include phones {
+    flex-wrap: wrap;
+  }
+}
+
 .skills__item {
   margin-right: 20px;
+
+  @include phones {
+    margin-right: 10px;
+  }
 }

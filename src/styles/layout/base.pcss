@@ -13,7 +13,6 @@ html {
 
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -86,4 +85,12 @@ img {
   display: block;
   max-width: 100%;
   max-height: 100%;
+}
+
+.body--active-menu {overflow: hidden;}
+
+.container--reviews {
+    @include phones {
+      width: 100%;
+    }
 }

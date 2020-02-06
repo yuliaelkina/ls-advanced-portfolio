@@ -2,7 +2,16 @@
 .contacts__title {
   margin-bottom: 100px;
 }
+
 .contacts__content {
-  padding-bottom: 165px; 
+  padding-bottom: 165px;
   width: 60%;
+
+  @include desktop {
+    width: 80%;
+  }
+
+  @include tablets {
+    width: 95%;
+  }
 }

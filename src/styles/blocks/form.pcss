@@ -1,63 +1,115 @@
 .form {
   margin-bottom: 60px;
+
+  @include phones {
+    margin-bottom: 0;
+  }
 }
+
 .form__row {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
-  margin-bottom: 60px; 
+  margin-bottom: 60px;
   width: 100%;
+  
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 }
+
 .form__title {
   position: absolute;
-  top: 0; left: 50px;
+  top: 0;
+  left: 50px;
   opacity: 0.3;
   font-weight: 700;
   transition: top $transition-duration;
 }
+
 .form__part {
-  width: 45%; 
+  width: 45%;
   position: relative;
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 60px;
+  }
 }
+
 .form__part--full {
   width: 100%;
 }
-.form__logo {transition: fill $transition-duration;
+
+.form__logo {
+  transition: fill $transition-duration;
   fill: #fff;
   width: 30px;
-  height: 30px; 
-  position: absolute; 
+  height: 30px;
+  position: absolute;
   bottom: 20px;
 }
-.form__input {z-index: 2;
-  opacity: 1; 
+
+.form__input {
+  z-index: 2;
+  opacity: 1;
   position: relative;
-  background: none; 
-  width: 100%; 
+  background: none;
+  width: 100%;
   outline: none;
   border: 1px solid #fff;
-  border-top: none; border-left: none; 
+  border-top: none;
+  border-left: none;
   border-right: none;
-  font-size: 1.125rem; 
+  font-size: 1.125rem;
   color: #fff;
   padding-bottom: 20px;
   padding-left: 45px;
   font-weight: 800;
   transition: border-color $transition-duration;
-  &:focus {border-color: $main-color;
+  cursor: pointer;
+  &:hover {
+    border-color: $main-color;
+  }
+  &:focus {
+  border-color: $main-color;
+}
 }
 
+.form__input:hover ~ .form__logo {
+  fill: $main-color;
 }
-.form__input:focus + .form__logo {fill: $main-color;}
-.form__input:focus + .form__title {top: -45px;}
-.form__input:not(:placeholder-shown) + .form__title {top: -45px;}
+
+.form__input:hover + .form__title {
+  top: -45px;
+}
+
+
+.form__input:focus ~ .form__logo {
+  fill: $main-color;
+}
+
+.form__input:focus + .form__title {
+  top: -45px;
+}
+
+.form__input:not(:placeholder-shown) + .form__title {
+  top: -45px;
+}
+
 .form__send-btn {
-  padding: 35px 120px; 
+  padding: 35px 120px;
   max-width: 350px;
   background: linear-gradient(to right, $main-color, #dc9322);
   text-transform: uppercase;
   font-size: 1.125rem;
   color: #fff;
   font-weight: 700;
+
+  @include phones {
+    width: 100%;
+    padding: 35px 50px;
+  }
 &:hover {
   cursor: pointer;
   background: $main-color;

@@ -2,8 +2,14 @@
   height: 100vh;
   min-width: 650px;
   color: #fff;
+
+  @include phones {
+    min-width: 320px;
+  }
 }
-.hero__container {position: relative;
+
+.hero__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,37 +20,60 @@
   display: flex;
   justify-content: center;
 }
+
 .hero__info {
   display: flex;
+
+  @include tablets {
+    display: block;
+  }
 }
+
 .hero__info-desc {
   font-size: 1.125rem;
-  
   text-align: right;
   margin-right: 60px;
+
+  @include tablets {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
 }
+
 .hero__info-name {
   font-size: 4.5rem;
   font-weight: 800;
   line-height: 0.8;
+
+  @include tablets {
+    font-size: 3rem;
+  }
 }
 
 .hero__buttons {
   position: absolute;
-  bottom: 60px; 
+  bottom: 60px;
   left: 50%;
   right: 50%;
-  display: flex; 
+  display: flex;
   justify-content: center;
+
+  @include tablets {
+    display: none;
+  }
 }
+
 .hero__btn {
   transition: color $transition-duration;
   display: flex;
   flex-direction: row;
   align-items: center;
 &:hover {
-  color: $main-color;}
+  color: $main-color;
 }
+}
+
 .hero__btn-icon {
   transition: 0.4s;
   margin-left: 20px;
@@ -52,6 +81,7 @@
   height: 30px;
   fill: #fff;
 &:hover {
-  fill: #d47e1e;}  
+  fill: #d47e1e;
+}
 }
 

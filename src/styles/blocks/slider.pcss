@@ -1,49 +1,126 @@
 .slider {
   display: flex;
-}
-.slider__display {
-  position: relative;
-  display: flex; 
-}
-.slider__display-pic {
-  width: 1000px;
-}
-.slider__previews {
-  position: absolute; 
-  width: 710px;
-  height: 100px; 
-  right: 0;
-  bottom: 10%;
-  display: flex; 
+
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
-.slider__previews-item {transition: border $transition-duration;
-  width: 25%;
-&:hover {
-  border: $main-color 3px solid;}
+.slider__display {
+  position: relative;
+  display: flex;
+  height: 550px;
+&::before {
+  position: absolute;
+  left: 95%;
+  bottom: 5%;
+  z-index: -1;
+  content: attr(data-slide);
+  font-size: 400px;
+  font-weight: 900;
+  color: #e6e6e6;
+
+  @include tablets {
+    font-size: 250px;
+    bottom: 15%;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+
+  @include desktop {
+    max-height: 450px;
+  }
+
+  @include tablets {
+    height: 350px;
+    width: 85%;
+    margin-bottom: 50px;
+  }
+
+  @include phones {
+    position: absolute;
+    max-height: 200px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.slider__display-pic {
+  width: 1000px;
+  
+  @include desktop {
+    width: 650px;
+  }
+}
+
+.slider__previews {
+  position: absolute;
+  height: 107px;
+  padding: 0;
+  right: 0;
+  bottom: 10%;
+  display: flex;
+  overflow: hidden;
+  width: 600px;
+  
+  @include tablets {
+    width: 450px;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+.slider-previews__link {
+  padding: 0;
+  width: 150px;
+}
+
+.slider__previews-item {
+  transition: border $transition-duration;
+  height: 100px;
+  width: 150px;
+  &.active, 
+  &:hover {
+    overflow: hidden;
+    border: $main-color 3px solid;
+}
 }
 
 .slider__previews-pic {
-size: inherit;
+  height: 100px;
+  width: 160px;
+  padding: 0;
 }
 
 .slider__buttons {
-  position: absolute; 
-  left: 100%; 
-  bottom: 10%;
+  position: absolute;
+  left: 100%;
+  bottom: 11.5%;
+
+  @include phones {
+    left: initial;
+    right: 0;
+    bottom: 0;
+  }
 }
+
 .slider__btn {
   transition: background-color $transition-duration;
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 50px; 
+  width: 50px;
   background-color: #353e4e;
 &:hover {
   cursor: pointer;
-  background-color: $main-color;}
+  background-color: $main-color;
+}
 }
 
 .slider__btn-icon {
@@ -54,37 +131,53 @@ size: inherit;
 
 .slider__btn-icon--left {
   transform: rotate(180deg);
-  margin-bottom: 0;}
+  margin-bottom: 0;
+}
 
-.slider__info {position: relative;
+.slider__info {
+  position: relative;
   width: 30%;
   margin-left: 150px;
-&::before {
-  position: absolute;
-  left: -220px;
-  bottom: 0;
-  z-index: -1;
-  content: "2";
-  font-size: 400px;
-  font-weight: 900;
-  color: #e6e6e6;
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include phones {
+    margin-top: 220px;
+    width: 95%;
+    text-align: left;
+  }
+
 }
-}
+
 .slider__tags {
   margin-bottom: 50px;
 }
+
 .slider__info-title {
   font-weight: 800;
   font-size: 1.875rem;
   margin-bottom: 50px;
 }
+
 .slider__info-desc {
   font-weight: 700;
   opacity: 0.7;
   margin-bottom: 50px;
 }
 
-.slider__info-link {transition: border-color $transition-duration;
+.slider__info-buttons {
+  align-self: flex-start;
+}
+
+.slider__info-link {
+  transition: border-color $transition-duration;
   position: relative;
   margin-left: 30px;
   line-height: 1;
@@ -93,15 +186,43 @@ size: inherit;
   font-weight: 800;
   border-bottom: 2px solid;
   border-color: transparent;
+
 &::before {
-  content: ""; 
-  position: absolute; 
-  top: 5px; left: -30px;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -30px;
   width: 16px;
-  height: 16px; 
-  background: svg-load('link.svg' fill=#586ed3, stroke=#586ed3, height=100%, width=100%); 
+  height: 16px;
+  background: svg-load('link.svg' fill=#586ed3, stroke=#586ed3, height=100%, width=100%);
   background-repeat: no-repeat;
 }
-&:hover {border-color: #586ed3;
-  }
+&:hover {
+  border-color: #586ed3;
+}
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: .3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-to {
+  opacity: 0;
 }

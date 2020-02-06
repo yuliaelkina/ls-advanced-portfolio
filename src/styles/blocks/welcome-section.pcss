@@ -1,9 +1,18 @@
 .welcome-section {
-  background-image: url(~images/content/bg_main+about_1800.png);
+  position: relative;
   background-size: cover;
-  color: #fff; 
+  color: #fff;
   background-repeat: no-repeat;
-@include desktop() { 
+
+  @include desktop() {
   background-image: url(~images/content/bg_main+about_1200.jpg);
-}
+  }
+
+  @include tablets {
+    background-image: url(~images/content/bg_main+about_756.jpg);
+  }
+
+  @include phones {
+    background-image: url(~images/content/bg_main+about_320.jpg);
+  }
 }

@@ -1,0 +1,62 @@
+.pop-up__button {
+  position: relative;
+  display: none;
+  width: 24px;
+  height: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  &::before {
+    content: "";
+    width: 24px;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    top: -8px;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    width: 24px;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+  }
+
+  @include tablets {
+    display: block;
+  }
+}
+
+.pop-up__menu {
+  right: -150%;
+  top: 0%;
+  background-color: #fff;
+  width: 325px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.pop-up__menu .menu__list {
+  color: $text-color;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.pop-up__close {
+  background-color: transparent;
+}
+.pop-up__close-icon {
+  fill: $text-color;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 30px;
+  top: 30px;
+}

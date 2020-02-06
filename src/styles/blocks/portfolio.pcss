@@ -1,7 +1,19 @@
 .portfolio__title {
   margin-top: 200px;
   margin-bottom: 100px;
+  
+  @include tablets {
+    margin-top: 150px;
+  }
+
+  @include phones {
+    margin-bottom: 50px;
+  }
 }
 .portfolio__content {
   margin-bottom: 200px;
+
+  @include phones {
+    margin-bottom: 110px;
+  }
 }

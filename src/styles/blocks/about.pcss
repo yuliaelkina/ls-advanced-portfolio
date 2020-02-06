@@ -1,42 +1,90 @@
-
 .about__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 100px;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .about__profile {
-  width: 35%; 
+  width: 35%;
   margin-bottom: 250px;
+
+  @include tablets {
+    width: 45%;
+  }
+
+  @include phones {
+    width: 95%;
+    margin-bottom: 50px;
+  }
 }
 
 .about__desc {
   width: 60%;
+
+  @include tablets {
+    width: 51%;
+  }
+
+  @include phones {
+    width: 95%;
+  }
 }
 
 .about__welcome-text {
   margin-bottom: 20px;
 }
+
 .about__username {
   font-size: 36px;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+
+  @include tablets {
+    font-size: 30px;
+  }
 }
+
 .about__description {
   margin-bottom: 90px;
+
+  @include tablets {
+    margin-bottom: 50px;
+  }
+
+  
 }
-.about__ps {position: relative;
+
+.about__ps {
+  position: relative;
   &::before {
   content: "*";
   position: absolute;
-  color: #402224; 
+  color: #402224;
   font-size: 48px;
   top: -10px;
   left: -40px;
-}}
+
+  @include tablets {
+    left: -30px;
+  }
+
+  @include phones {
+    left: -25px;
+  }
+}
+}
+
 .about__ps-text {
-  font-style: italic; 
+  font-style: italic;
   opacity: 0.6;
+  
+  @include phones {
+    margin-bottom: 100px;
+  }
 }
